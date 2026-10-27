@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKTUCalc - CGPA & SGPA Calculator</title>
+    <!-- Linking external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="logo">AKTUCalc</h1>
+            <nav class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#calculator-section">SGPA</a>
+                <a href="#calculator-section">CGPA</a>
+                <a href="#calculator-section">Grades</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+        <h2>CGPA & SGPA Calculator</h2>
+        <p>Calculate your AKTU SGPA, CGPA and percentage in seconds.</p>
+    </section>
+
+    <!-- Main Content / Calculator Container -->
+    <main class="main-container" id="calculator-section">
+        
+        <!-- Converter Card (CGPA <-> Percentage) -->
+        <section class="card percentage-card">
+            <div class="card-header">
+                <h3>CGPA / SGPA to Percentage</h3>
+                <button id="swap-btn" class="secondary-btn">⇄ Swap</button>
+            </div>
+            <div class="converter-row">
+                <div class="input-group">
+                    <input type="number" id="conversion-input" placeholder="e.g. 8.5" step="0.01" min="0" max="10">
+                </div>
+                <div class="conversion-result-display">
+                    <span id="conversion-label">CGPA / SGPA</span> 
+                    <span class="arrow">→</span> 
+                    <span id="conversion-output">—</span>
+                </div>
+            </div>
+            <p class="formula-text" id="formula-display">Formula: Percentage = (CGPA − 0.75) × 10</p>
+        </section>
+
+        <!-- Dynamic Calculator Switcher -->
+        <section class="card calculator-card">
+            <div class="calc-switcher">
+                <button class="tab-btn active" data-tab="sgpa">SGPA Calculator</button>
+                <button class="tab-btn" data-tab="cgpa">CGPA Calculator</button>
+            </div>
+
+            <!-- SGPA Form Area -->
+            <div id="sgpa-panel" class="calc-panel active">
+                <div class="table-headers">
+                    <span class="col-title">CREDITS</span>
+                    <span class="col-title">GRADE</span>
+                </div>
+                <div id="subject-rows-container">
+                    <!-- Dynamic Rows injected via JS -->
+                </div>
+                <button id="add-subject-btn" class="add-btn">+ Add subject</button>
+                
+                <div class="result-summary-box">
+                    <h3>Calculated SGPA: <span id="sgpa-result-value">0.00</span></h3>
+                </div>
+            </div>
+
+            <!-- CGPA Form Area -->
+            <div id="cgpa-panel" class="calc-panel">
+                <div class="table-headers">
+                    <span class="col-title">SEMESTER</span>
+                    <span class="col-title">SGPA OBTAINED</span>
+                    <span class="col-title">TOTAL CREDITS</span>
+                </div>
+                <div id="cgpa-rows-container">
+                    <!-- Dynamic Sem Rows injected via JS -->
+                </div>
+                <button id="add-sem-btn" class="add-btn">+ Add semester</button>
+                
+                <div class="result-summary-box">
+                    <h3>Calculated CGPA: <span id="cgpa-result-value">0.00</span></h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <p>&copy; AKTU CGPA & SGPA Calculator &bull; Web Designing Lab Project</p>
+    </footer>
+
+    <!-- Linking external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
